@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "package.json"
+}
   "name": "kaiser-line-bot",
   "version": "1.0.0",
   "description": "",
