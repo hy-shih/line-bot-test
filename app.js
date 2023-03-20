@@ -116,7 +116,7 @@ async function handleEvent(event) {
 }
 
     //判斷提供功能表
-    else if (ltext == "help") {
+if (ltext == "help") {
   const response = {
     type: "text",
     text: "請依照以下規則：\n" +
