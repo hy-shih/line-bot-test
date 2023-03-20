@@ -110,11 +110,7 @@ async function handleEvent(event) {
       console.log("My loard回應內容:", choiceskk.message.content.trim());
       return client.replyMessage(event.replyToken, echo);
     }
-  
-      // use reply API
-      return client.replyMessage(event.replyToken, echo);
-    }
-  
+    
     //判斷提供功能表
     else if (ltext == "help") {
       const response = {
@@ -142,9 +138,8 @@ async function handleEvent(event) {
     else {
       return Promise.resolve(null);
     }
-  
   }
-}
+
 
 // listen on port
 const port = process.env.PORT || 3000;
