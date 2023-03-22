@@ -112,7 +112,7 @@ async function handleEvent(event) {
     }
     else if (ltext.startsWith("hi 花花花")) {
     const completion = await openai.createImage({
-        prompt: ltext.substring(9), // remove "hi 花花花" from the prompt
+        prompt: ltext.substring(9),
         n: 1,
         size: "256x256",
     });
@@ -133,7 +133,7 @@ async function handleEvent(event) {
           "'hi bot + 描述'，一半創意一半制式\n" +
           "'hi 花花 + 描述'，回答比較創意，每次都不一樣\n" +
           "'pochi + 描述'，ChatGpt3.5的回答\n" +
-	  "'hi 狂花 + 描述'，製圖\n"
+	  "'hi 花花花 + 描述'，製圖\n"
       }
       // use reply API
       return client.replyMessage(event.replyToken, response);
