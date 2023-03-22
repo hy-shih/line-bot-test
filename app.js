@@ -110,7 +110,21 @@ async function handleEvent(event) {
       console.log("My loard回應內容:", choiceskk.message.content.trim());
       return client.replyMessage(event.replyToken, echo);
     }
-    
+    else if (inputText.startsWith(imageCallSign)) {
+    const completion = await openai.createImage({
+        prompt: event.message.text.substring(imageCallSignLength),
+        n: 1,
+        size: "256x256",
+    });
+    image_url = completion.data.data[0].url;
+    // create a echoing text message
+    console.log("回應內容:", image_url);
+    echo = {
+        type: 'image',
+        originalContentUrl: image_url,
+        previewImageUrl: image_url
+    }
+	    
     //判斷提供功能表
     else if (ltext == "help") {
       const response = {
