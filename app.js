@@ -110,7 +110,7 @@ async function handleEvent(event) {
       console.log("My loard回應內容:", choiceskk.message.content.trim());
       return client.replyMessage(event.replyToken, echo);
     }
-    else if (inputText.startsWith(imageCallSign)) {
+    else if (inputText.startsWith(hi pochichan)) {
     const completion = await openai.createImage({
         prompt: event.message.text.substring(imageCallSignLength),
         n: 1,
