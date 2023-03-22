@@ -110,9 +110,9 @@ async function handleEvent(event) {
       console.log("My loard回應內容:", choiceskk.message.content.trim());
       return client.replyMessage(event.replyToken, echo);
     }
-    else if (ltext.startsWith("hi 花花花")) {
+    else if (ltext.startsWith("hi 狂花")) {
 	const completion = await openai.createImage({
-        prompt: event.message.text.substring("hi 花花花"),
+        prompt: event.message.text.substring("hi 狂花"),
         n: 1,
         size: "256x256",
     });
@@ -132,7 +132,8 @@ async function handleEvent(event) {
         text: "請依照以下規則：\n" +
           "'hi bot + 描述'，一半創意一半制式\n" +
           "'hi 花花 + 描述'，回答比較創意，每次都不一樣\n" +
-          "'pochi + 描述'，ChatGpt3.5的回答\n" 
+          "'pochi + 描述'，ChatGpt3.5的回答\n" +
+	  "'hi 狂花 + 描述'，製圖\n"
       }
       // use reply API
       return client.replyMessage(event.replyToken, response);
