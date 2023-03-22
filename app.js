@@ -110,20 +110,20 @@ async function handleEvent(event) {
       console.log("My loard回應內容:", choiceskk.message.content.trim());
       return client.replyMessage(event.replyToken, echo);
     }
-    else if (ltext.startsWith("hi 狂花")) {
-	const completion = await openai.createImage({
-        prompt: event.message.text.substring("hi 狂花"),
+    else if (ltext.startsWith("hi 花花花")) {
+    const completion = await openai.createImage({
+        prompt: ltext.substring(9), // remove "hi 花花花" from the prompt
         n: 1,
         size: "256x256",
     });
-    image_url = completion.data.data[0].url;
-    // create a echoing text message
-    console.log("回應內容:", image_url);
-    echo = {
+    const image_url = completion.data.data[0].url;
+    // create an echoing image message
+    const echo = {
         type: 'image',
         originalContentUrl: image_url,
         previewImageUrl: image_url
-    }
+    };
+    console.log("回應內容:", echo);
     }
     //判斷提供功能表
     else if (ltext == "help") {
