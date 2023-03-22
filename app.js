@@ -112,7 +112,7 @@ async function handleEvent(event) {
     }
     else if (ltext.startsWith("hi 花花花")) {
 	const completion = await openai.createImage({
-        prompt: event.message.text.substring(hi 花花花),
+        prompt: event.message.text.substring("hi 花花花"),
         n: 1,
         size: "256x256",
     });
