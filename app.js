@@ -123,7 +123,8 @@ async function handleEvent(event) {
         type: 'image',
         originalContentUrl: image_url,
         previewImageUrl: image_url
-    };
+    }
+    }
     //判斷提供功能表
     else if (ltext == "help") {
       const response = {
