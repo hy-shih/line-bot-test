@@ -124,6 +124,7 @@ async function handleEvent(event) {
         previewImageUrl: image_url
     };
     console.log("回應內容:", echo);
+    return client.replyMessage(event.replyToken, echo);
     }
     //判斷提供功能表
     else if (ltext == "help") {
